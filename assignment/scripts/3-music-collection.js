@@ -19,24 +19,54 @@ console.log(addToCollection("Singin' the Blues", "B.B. King", 1956));
 console.log(addToCollection("Live in Cook County Jail", "B.B. King", 1971));
 console.log(addToCollection("The Real Folk Blues", "John Lee Hooker", 1966));
 
-//console.log(collection);
+console.log(collection);
 
-function showCollection(title, artist, yearPublished){
-    for (i=0; i<collection.length; i++){
-        if ((title && artist) === (title && artist))
-        return `${title} " by " ${artist}`
+//let albumInfo = (collection[i].albumTitle || collection[i].albumArtist || collection[i].albumYear);
+
+//function showCollection(albumInfo){
+    //for (i=0; i<collection.length; i++){
+        //console.log(collection);
+        //let albumInfo = (collection[i].albumTitle || collection[i].albumArtist || collection[i].albumYear);
+        //if (albumInfo === collection[i].albumTitle) {
+            //return `${collection[i].albumTitle} by ${collection[i].albumArtist}, published in ${collection[i].albumYear}.`;
+        //} else if (albumInfo === collection[i].albumArtist) {
+            //return `${collection[i].albumTitle} by ${collection[i].albumArtist}, published in ${collection[i].albumYear}.`;
+        //} else if (albumInfo === collection[i].albumYear) {
+            //return `${collection[i].albumTitle} by ${collection[i].albumArtist}, published in ${collection[i].albumYear}.`;
+        //} else {
+            //return ("Not in collection.")
+        //}
+    //}
+//}
+
+function showCollection(collection){
+    for (let i=0; i<collection.length; i++) {
+        console.log(collection.length[i]);
+        console.log((`${collection[i].albumTitle} by ${collection[i].albumArtist}, published in ${collection[i].albumYear}.`));
+    }return true;
 }
 
-console.log(showCollection(artist, title));
+console.log(showCollection(collection));
 
-//function findByArtist(artist) {
-//let artistFound=
-//for (let i=0; i < collection.length; i++) 
-//    if (collection[i].albumArtist === artist){
-//        found.push(collection[i])
-//    }
-//    return artistFound;
-//}
+//HOW DO I GET IT TO GO THROUGH EVERY ALBUM AND POST IT IN A DIFFERENT FORMAT???
+//Got it, lol. I was trying to return instead of just console.logging the results.
+
+function findByArtist(artist) {
+let artistFound= [];
+for (let i=0; i < collection.length; i++) 
+    if (collection[i].albumArtist === artist){
+        artistFound.push(collection[i])
+    }
+    return artistFound;
+}
+
+console.log(findByArtist("B.B. King"));
+console.log(findByArtist("Tina Fey"));
+console.log(findByArtist("Stevie Nicks"));
+console.log(findByArtist("Albert King"));
+console.log(findByArtist("John Lee Hooker"));
+
+
 
 
 //Unfinished stretch goals and notes, you don't have to read further.
@@ -69,68 +99,3 @@ console.log(showCollection(artist, title));
 
 
 
-//Notes from class 11/23
-
-//make a coffee machine
-//function brewCoffee(groundCoffee, water){
-    
-//    console.log(`brewing ${water} oz of ${groundCoffee}`)
-
-//    return `${groundCoffee} ${water} oz is ready!`
-//}
-//Function is done after return, must console log to see it.
-//You can only have 1 return per function unless using 
-//if/else statements.
-
-//const starbucks = 'Starbucks Holiday Blend';
-
-//Run the coffee machine
-//const result = brewCoffee(starbucks, 12);
-
-//console.log(result); //or
-//console.log(brewCoffee(starbucks, 12)); //but want to get in the
-//habit of creating a variable called result or something
-
-//brewCoffee('Starbucks Holiday Blend', 12);
-//brewCoffee('Folgers', 10);
-
-//Don't name parameters the same as Variables!
-
-//make a coffee machine
-//function brewCoffee(groundCoffee, water){
-    
-//    console.log(`brewing ${water} oz of ${groundCoffee}`);
-    
-//    if (water >12 && hasLargeCups()){ //can call functions in functions.
-//        return `Large ${groundCoffee}`
-//    } else {
-//        return `${groundCoffee}`;
-//    }
-//    return `${groundCoffee} ${water} oz is ready!`;
-
-//}
-
-//functions hasLargeCups() {
- //   if(have large cups){ //insert logic here (this logic won't work)
-  //      return true;
-    //} else {
-      //  return false;
-    //}
-//}
-
-//const sum = 2 + 2;
-//let list = [1,2,3];
-
-//let removeItem = list.pop();
-//console.log(removeItem);
-//console.log(list);
-
-//undefined just means nothing, it's not an error unless you 
-//needed a return.
-//fireship on youtube - hoisting.
-//in part 3 we don't want nothing, we want an empty array.
-//
-//Trust the process!!
-//
-//
-//
